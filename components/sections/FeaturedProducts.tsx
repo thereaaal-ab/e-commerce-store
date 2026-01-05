@@ -82,7 +82,7 @@ export default function FeaturedProducts() {
           {collections.map((collection, index) => (
             <motion.div
               key={collection.id}
-              className="group relative bg-primary-navy/20 rounded-sm overflow-hidden border border-primary-navy/40 hover:border-accent-metallic-gray/50 transition-all"
+              className="group relative bg-primary-black/20 rounded-lg overflow-hidden border border-accent-white/10 hover:border-accent-metallic-gray/50 transition-all"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -90,7 +90,7 @@ export default function FeaturedProducts() {
               whileHover={{ y: -4 }}
             >
               {/* Collection Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-64 overflow-hidden rounded-t-lg">
                 <Image
                   src={collection.image}
                   alt={collection.name}
@@ -102,7 +102,7 @@ export default function FeaturedProducts() {
               </div>
 
               {/* Collection Info */}
-              <div className="p-4 bg-primary-black/40">
+              <div className="p-4 bg-primary-black/40 rounded-b-lg">
                 <p className="text-accent-metallic-gray font-body text-xs uppercase tracking-[0.15em] mb-2">
                   {collection.category}
                 </p>

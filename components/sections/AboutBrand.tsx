@@ -23,7 +23,7 @@ const behindScenesImages = [
 
 export default function AboutBrand() {
   return (
-    <section id="manifesto" className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-navy/10 to-primary-black">
+    <section id="manifesto" className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-primary-black">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
@@ -65,15 +65,15 @@ export default function AboutBrand() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="px-6 py-4 bg-primary-navy/30 rounded-sm border border-primary-navy/50">
+              <div className="px-6 py-4 bg-primary-black/50 rounded-sm border border-accent-white/10">
                 <p className="text-3xl font-heading font-bold text-accent-metallic-gray mb-1">500GSM</p>
                 <p className="text-xs text-accent-white/50 font-body uppercase tracking-wider">Heavyweight Cotton</p>
               </div>
-              <div className="px-6 py-4 bg-primary-navy/30 rounded-sm border border-primary-navy/50">
+              <div className="px-6 py-4 bg-primary-black/50 rounded-sm border border-accent-white/10">
                 <p className="text-3xl font-heading font-bold text-accent-metallic-gray mb-1">100%</p>
                 <p className="text-xs text-accent-white/50 font-body uppercase tracking-wider">Technical Materials</p>
               </div>
-              <div className="px-6 py-4 bg-primary-navy/30 rounded-sm border border-primary-navy/50">
+              <div className="px-6 py-4 bg-primary-black/50 rounded-sm border border-accent-white/10">
                 <p className="text-3xl font-heading font-bold text-accent-metallic-gray mb-1">2020</p>
                 <p className="text-xs text-accent-white/50 font-body uppercase tracking-wider">Founded</p>
               </div>
@@ -91,7 +91,7 @@ export default function AboutBrand() {
             {behindScenesImages.map((image, index) => (
               <motion.div
                 key={image.id}
-                className={`relative h-64 lg:h-80 rounded-sm overflow-hidden group border border-primary-navy/40 ${
+                className={`relative h-64 lg:h-80 rounded-sm overflow-hidden group border border-accent-white/10 ${
                   index === 0 ? 'col-span-2' : ''
                 }`}
                 initial={{ opacity: 0, y: 30 }}

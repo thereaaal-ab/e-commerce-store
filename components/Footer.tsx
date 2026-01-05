@@ -17,7 +17,6 @@ export default function Footer() {
     ],
     brand: [
       { name: 'Manifesto', href: '#manifesto' },
-      { name: 'Editorial', href: '#editorial' },
       { name: 'Contact', href: '#' },
       { name: 'Shipping', href: '#' },
       { name: 'Returns', href: '#' },
@@ -31,7 +30,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-primary-navy border-t border-primary-navy/30">
+    <footer className="bg-primary-black border-t border-accent-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
@@ -131,11 +130,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Your email"
-                className="w-full px-4 py-2.5 bg-primary-black/50 border border-primary-navy/50 rounded-sm text-accent-white placeholder-accent-white/30 focus:outline-none focus:border-accent-metallic-gray/50 transition-colors font-body text-sm"
+                className="w-full px-4 py-2.5 bg-primary-black/50 border border-accent-white/10 rounded-sm text-accent-white placeholder-accent-white/30 focus:outline-none focus:border-accent-metallic-gray/50 transition-colors font-body text-sm"
               />
               <motion.button
                 type="submit"
-                className="w-full px-6 py-2.5 bg-primary-black text-accent-white font-body font-medium uppercase tracking-[0.15em] text-xs rounded-sm border border-accent-metallic-gray/30 hover:border-accent-metallic-gray hover:bg-primary-navy/50 transition-all"
+                className="w-full px-6 py-2.5 bg-primary-black text-accent-white font-body font-medium uppercase tracking-[0.15em] text-xs rounded-sm border border-accent-metallic-gray/30 hover:border-accent-metallic-gray hover:bg-accent-white/10 transition-all"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -147,7 +146,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="mt-12 pt-8 border-t border-primary-navy/30 flex flex-col md:flex-row justify-between items-center"
+          className="mt-12 pt-8 border-t border-accent-white/10 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

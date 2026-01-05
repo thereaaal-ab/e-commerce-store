@@ -19,8 +19,7 @@ export default function Header() {
 
   const navLinks = [
     { name: 'Collections', href: '#collections' },
-    { name: 'Utility', href: '#utility' },
-    { name: 'Editorial', href: '#editorial' },
+    { name: 'Categories', href: '#categories' },
     { name: 'Manifesto', href: '#manifesto' },
   ]
 
@@ -28,7 +27,7 @@ export default function Header() {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-primary-black/98 backdrop-blur-sm border-b border-primary-navy/30'
+          ? 'bg-primary-black/98 backdrop-blur-sm border-b border-accent-white/10'
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -88,7 +87,7 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-primary-black/98 border-t border-primary-navy/30"
+            className="md:hidden bg-primary-black/98 border-t border-accent-white/10"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
