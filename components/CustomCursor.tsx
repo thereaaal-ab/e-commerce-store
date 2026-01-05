@@ -34,11 +34,15 @@ export default function CustomCursor() {
 
   return (
     <>
+      {/* Structural metallic pointer */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 rounded-full bg-accent-electric-blue pointer-events-none z-[10000] mix-blend-difference"
+        className="fixed top-0 left-0 w-3 h-3 rounded-sm bg-accent-metallic-gray pointer-events-none z-[10000] mix-blend-difference"
+        style={{
+          clipPath: 'polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%)',
+        }}
         animate={{
-          x: mousePosition.x - 8,
-          y: mousePosition.y - 8,
+          x: mousePosition.x - 6,
+          y: mousePosition.y - 6,
         }}
         transition={{
           type: 'spring',
@@ -46,15 +50,21 @@ export default function CustomCursor() {
           damping: 28,
         }}
       />
+      {/* Outer structural frame */}
       <motion.div
-        className={`fixed top-0 left-0 rounded-full pointer-events-none z-[9999] mix-blend-difference ${
+        className={`fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference ${
           isHovering
-            ? 'w-12 h-12 border-2 border-accent-electric-blue bg-transparent'
-            : 'w-8 h-8 border border-white/30 bg-white/10'
+            ? 'w-16 h-16 border-2 border-accent-metallic-gray bg-transparent'
+            : 'w-10 h-10 border border-accent-white/20 bg-accent-white/5'
         }`}
+        style={{
+          clipPath: isHovering 
+            ? 'polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)'
+            : 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)',
+        }}
         animate={{
-          x: mousePosition.x - (isHovering ? 24 : 16),
-          y: mousePosition.y - (isHovering ? 24 : 16),
+          x: mousePosition.x - (isHovering ? 32 : 20),
+          y: mousePosition.y - (isHovering ? 32 : 20),
         }}
         transition={{
           type: 'spring',
@@ -65,4 +75,3 @@ export default function CustomCursor() {
     </>
   )
 }
-

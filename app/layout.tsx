@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins, Bebas_Neue, Montserrat } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import Header from '@/components/Header'
@@ -11,30 +11,9 @@ const inter = Inter({
   display: 'swap',
 })
 
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
-
-const bebasNeue = Bebas_Neue({ 
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-bebas',
-  display: 'swap',
-})
-
-const montserrat = Montserrat({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-montserrat',
-  display: 'swap',
-})
-
 export const metadata: Metadata = {
-  title: 'Street Style | Urban Fashion & Streetwear',
-  description: 'Wear the Attitude. Discover the latest streetwear and contemporary clothing for stylish teenagers and young adults.',
+  title: 'Avant-Garde Urbanism | Utility-Driven Streetwear',
+  description: 'Urban Utility Redefined. Avant-garde streetwear with technical materials, oversized silhouettes, and purposeful design for the modern urban explorer.',
 }
 
 export default function RootLayout({
@@ -44,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${poppins.variable} ${bebasNeue.variable} ${montserrat.variable} font-body antialiased`}>
+      <body className={`${inter.variable} font-body antialiased`}>
         <CustomCursor />
         <Header />
         <main className="relative">

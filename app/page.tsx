@@ -3,7 +3,7 @@ import FeaturedProducts from '@/components/sections/FeaturedProducts'
 import ShopCategories from '@/components/sections/ShopCategories'
 import Lookbook from '@/components/sections/Lookbook'
 import AboutBrand from '@/components/sections/AboutBrand'
-import InstagramFeed from '@/components/sections/InstagramFeed'
+import Community from '@/components/sections/Community'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <ShopCategories />
       <Lookbook />
       <AboutBrand />
-      <InstagramFeed />
+      <Community />
     </div>
   )
 }

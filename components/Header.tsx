@@ -18,17 +18,17 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { name: 'Shop', href: '#shop' },
-    { name: 'New Arrivals', href: '#new-arrivals' },
-    { name: 'Lookbook', href: '#lookbook' },
-    { name: 'About', href: '#about' },
+    { name: 'Collections', href: '#collections' },
+    { name: 'Utility', href: '#utility' },
+    { name: 'Editorial', href: '#editorial' },
+    { name: 'Manifesto', href: '#manifesto' },
   ]
 
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-primary-black/95 backdrop-blur-md border-b border-primary-navy/50'
+          ? 'bg-primary-black/98 backdrop-blur-sm border-b border-primary-navy/30'
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -40,11 +40,13 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <motion.h1
-              className="text-2xl sm:text-3xl font-heading font-bold text-accent-white tracking-wider"
+              className="text-xl sm:text-2xl font-heading font-bold text-accent-white tracking-wider uppercase"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              STREET<span className="text-accent-electric-blue">STYLE</span>
+              <span className="text-accent-white">AVANT</span>
+              <span className="text-accent-metallic-gray">-</span>
+              <span className="text-accent-white">URBAN</span>
             </motion.h1>
           </Link>
 
@@ -54,9 +56,10 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-accent-white/80 hover:text-accent-electric-blue transition-colors font-body text-sm font-medium uppercase tracking-wider"
+                className="text-accent-white/70 hover:text-accent-white transition-colors font-body text-xs font-medium uppercase tracking-[0.2em] relative group"
               >
                 {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-metallic-gray group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </div>
@@ -64,21 +67,20 @@ export default function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
             <motion.button
-              className="relative p-2 text-accent-white hover:text-accent-electric-blue transition-colors"
+              className="relative p-2 text-accent-white/70 hover:text-accent-white transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <ShoppingBag size={24} />
-              <span className="absolute top-0 right-0 w-2 h-2 bg-accent-hot-pink rounded-full"></span>
+              <ShoppingBag size={20} />
             </motion.button>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-accent-white"
+              className="md:hidden p-2 text-accent-white/70"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -88,7 +90,7 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-primary-navy border-t border-primary-navy/50"
+            className="md:hidden bg-primary-black/98 border-t border-primary-navy/30"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -99,7 +101,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="block text-accent-white/80 hover:text-accent-electric-blue transition-colors font-body text-sm font-medium uppercase tracking-wider py-2"
+                  className="block text-accent-white/70 hover:text-accent-white transition-colors font-body text-xs font-medium uppercase tracking-[0.2em] py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -112,4 +114,3 @@ export default function Header() {
     </motion.header>
   )
 }
-
