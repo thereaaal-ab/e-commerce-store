@@ -42,7 +42,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-xl font-heading font-bold text-accent-white mb-4 uppercase tracking-wide">
-              AVANT<span className="text-accent-metallic-gray">-</span>URBAN
+              NEXORA
             </h3>
             <p className="text-accent-white/50 font-body text-sm leading-relaxed mb-6">
               Avant-Garde Urbanism. Utility-driven design for the modern explorer.
@@ -154,7 +154,7 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <p className="text-accent-white/30 font-body text-xs mb-4 md:mb-0">
-            © {currentYear} Avant-Urban. All rights reserved.
+            © {currentYear} Nexora. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link

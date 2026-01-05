@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import CustomCursor from '@/components/CustomCursor'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -12,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Avant-Garde Urbanism | Utility-Driven Streetwear',
+  title: 'Nexora | Avant-Garde Urban Utility',
   description: 'Urban Utility Redefined. Avant-garde streetwear with technical materials, oversized silhouettes, and purposeful design for the modern urban explorer.',
 }
 
@@ -24,7 +23,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-body antialiased`}>
-        <CustomCursor />
         <Header />
         <main className="relative">
           {children}

@@ -44,9 +44,7 @@ export default function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-accent-white">AVANT</span>
-              <span className="text-accent-metallic-gray">-</span>
-              <span className="text-accent-white">URBAN</span>
+              <span className="text-accent-white">NEXORA</span>
             </motion.h1>
           </Link>
 

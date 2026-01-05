@@ -111,10 +111,3 @@ body::before {
   transform: scale(1.02) skew(1deg);
 }
 
-/* Hide default cursor on interactive elements */
-button,
-a,
-[role="button"] {
-  cursor: none;
-}
-
