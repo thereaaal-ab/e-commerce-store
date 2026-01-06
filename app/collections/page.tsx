@@ -172,7 +172,7 @@ export default function CollectionsPage() {
 
         <div className="flex gap-8">
           {/* Filter Sidebar */}
-          <aside className={`hidden lg:block w-64 flex-shrink-0 ${isFilterOpen ? 'lg:hidden' : ''}`}>
+          <aside className="hidden lg:block w-64 flex-shrink-0">
             <div className="sticky top-24 space-y-6">
               {/* Categories */}
               <div>
@@ -267,115 +267,6 @@ export default function CollectionsPage() {
             </div>
           </aside>
 
-          {/* Mobile Filter Button */}
-          <button
-            onClick={() => setIsFilterOpen(!isFilterOpen)}
-            className="lg:hidden fixed bottom-6 right-6 z-40 p-4 bg-primary-black border border-accent-white/10 rounded-full text-accent-white shadow-lg"
-          >
-            <Filter size={24} />
-          </button>
-
-          {/* Mobile Filter Overlay */}
-          {isFilterOpen && (
-            <div className="lg:hidden fixed inset-0 z-50 bg-primary-black">
-              <div className="p-6 h-full overflow-y-auto">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-xl font-heading font-bold text-accent-white">Filters</h2>
-                  <button
-                    onClick={() => setIsFilterOpen(false)}
-                    className="text-accent-white"
-                  >
-                    <X size={24} />
-                  </button>
-                </div>
-                {/* Same filter content as sidebar */}
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
-                      Categories
-                    </h3>
-                    <div className="space-y-2">
-                      {categories.map(category => (
-                        <button
-                          key={category}
-                          onClick={() => setSelectedCategory(category)}
-                          className={`block w-full text-left px-3 py-2 rounded-lg transition-colors font-body text-sm ${
-                            selectedCategory === category
-                              ? 'bg-accent-white/10 text-accent-white border border-accent-white/20'
-                              : 'text-accent-white/60 hover:text-accent-white hover:bg-accent-white/5'
-                          }`}
-                        >
-                          {category}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
-                      Price
-                    </h3>
-                    <div className="flex gap-2">
-                      <input
-                        type="number"
-                        placeholder="Min"
-                        value={priceRange.min}
-                        onChange={(e) => setPriceRange({ ...priceRange, min: Number(e.target.value) })}
-                        className="w-full px-3 py-2 bg-primary-black/50 border border-accent-white/10 rounded-lg text-accent-white placeholder-accent-white/30 focus:outline-none focus:border-accent-metallic-gray/50 font-body text-sm"
-                      />
-                      <input
-                        type="number"
-                        placeholder="Max"
-                        value={priceRange.max}
-                        onChange={(e) => setPriceRange({ ...priceRange, max: Number(e.target.value) })}
-                        className="w-full px-3 py-2 bg-primary-black/50 border border-accent-white/10 rounded-lg text-accent-white placeholder-accent-white/30 focus:outline-none focus:border-accent-metallic-gray/50 font-body text-sm"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
-                      Sizes
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {sizes.map(size => (
-                        <button
-                          key={size}
-                          onClick={() => toggleSize(size)}
-                          className={`px-3 py-1 rounded-lg border transition-colors font-body text-sm ${
-                            selectedSizes.includes(size)
-                              ? 'bg-accent-white/10 text-accent-white border-accent-white/20'
-                              : 'bg-primary-black/50 text-accent-white/60 border-accent-white/10 hover:border-accent-white/30'
-                          }`}
-                        >
-                          {size}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
-                      Colors
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {colors.map(color => (
-                        <button
-                          key={color}
-                          onClick={() => toggleColor(color)}
-                          className={`px-3 py-1 rounded-lg border transition-colors font-body text-sm ${
-                            selectedColors.includes(color)
-                              ? 'bg-accent-white/10 text-accent-white border-accent-white/20'
-                              : 'bg-primary-black/50 text-accent-white/60 border-accent-white/10 hover:border-accent-white/30'
-                          }`}
-                        >
-                          {color}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          )}
-
           {/* Products Grid */}
           <div className="flex-1">
             <div className="mb-6">
@@ -418,8 +309,115 @@ export default function CollectionsPage() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Filter Button */}
+        <button
+          onClick={() => setIsFilterOpen(!isFilterOpen)}
+          className="lg:hidden fixed bottom-6 right-6 z-40 p-4 bg-primary-black border border-accent-white/10 rounded-full text-accent-white shadow-lg"
+        >
+          <Filter size={24} />
+        </button>
+
+        {/* Mobile Filter Overlay */}
+        {isFilterOpen && (
+          <div className="lg:hidden fixed inset-0 z-50 bg-primary-black">
+            <div className="p-6 h-full overflow-y-auto">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-xl font-heading font-bold text-accent-white">Filters</h2>
+                <button
+                  onClick={() => setIsFilterOpen(false)}
+                  className="text-accent-white"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
+                    Categories
+                  </h3>
+                  <div className="space-y-2">
+                    {categories.map(category => (
+                      <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`block w-full text-left px-3 py-2 rounded-lg transition-colors font-body text-sm ${
+                          selectedCategory === category
+                            ? 'bg-accent-white/10 text-accent-white border border-accent-white/20'
+                            : 'text-accent-white/60 hover:text-accent-white hover:bg-accent-white/5'
+                        }`}
+                      >
+                        {category}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
+                    Price
+                  </h3>
+                  <div className="flex gap-2">
+                    <input
+                      type="number"
+                      placeholder="Min"
+                      value={priceRange.min}
+                      onChange={(e) => setPriceRange({ ...priceRange, min: Number(e.target.value) })}
+                      className="w-full px-3 py-2 bg-primary-black/50 border border-accent-white/10 rounded-lg text-accent-white placeholder-accent-white/30 focus:outline-none focus:border-accent-metallic-gray/50 font-body text-sm"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Max"
+                      value={priceRange.max}
+                      onChange={(e) => setPriceRange({ ...priceRange, max: Number(e.target.value) })}
+                      className="w-full px-3 py-2 bg-primary-black/50 border border-accent-white/10 rounded-lg text-accent-white placeholder-accent-white/30 focus:outline-none focus:border-accent-metallic-gray/50 font-body text-sm"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
+                    Sizes
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {sizes.map(size => (
+                      <button
+                        key={size}
+                        onClick={() => toggleSize(size)}
+                        className={`px-3 py-1 rounded-lg border transition-colors font-body text-sm ${
+                          selectedSizes.includes(size)
+                            ? 'bg-accent-white/10 text-accent-white border-accent-white/20'
+                            : 'bg-primary-black/50 text-accent-white/60 border-accent-white/10 hover:border-accent-white/30'
+                        }`}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
+                    Colors
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {colors.map(color => (
+                      <button
+                        key={color}
+                        onClick={() => toggleColor(color)}
+                        className={`px-3 py-1 rounded-lg border transition-colors font-body text-sm ${
+                          selectedColors.includes(color)
+                            ? 'bg-accent-white/10 text-accent-white border-accent-white/20'
+                            : 'bg-primary-black/50 text-accent-white/60 border-accent-white/10 hover:border-accent-white/30'
+                        }`}
+                      >
+                        {color}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
 }
-
