@@ -54,7 +54,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <Link href="#collections">
+            <Link href="#hot-picks">
               <motion.button
                 className="px-10 py-4 bg-primary-black text-accent-white font-body font-medium uppercase tracking-[0.2em] text-sm border border-accent-metallic-gray/30 hover:border-accent-metallic-gray hover:bg-accent-white/10 transition-all relative overflow-hidden group"
                 whileHover={{ scale: 1.02 }}
