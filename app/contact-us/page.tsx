@@ -45,10 +45,10 @@ export default function ContactUsPage() {
                       Email
                     </p>
                     <a
-                      href="mailto:info@nexora.com"
+                      href="mailto:info@swag.com"
                       className="text-accent-white font-body hover:text-accent-metallic-gray transition-colors"
                     >
-                      info@nexora.com
+                      info@swag.com
                     </a>
                   </div>
                 </div>

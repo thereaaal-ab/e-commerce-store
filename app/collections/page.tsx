@@ -18,63 +18,63 @@ interface Product {
 const allProducts: Product[] = [
   {
     id: 1,
-    name: 'Asymmetrical Cargo Set',
+    name: 'Classic Hoodie',
     price: 349,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Hoodies',
     size: ['S', 'M', 'L', 'XL'],
     color: ['Black', 'Navy'],
   },
   {
     id: 2,
-    name: 'Tactical Vest Layering',
+    name: 'Tactical Vest',
     price: 429,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Outerwear',
     size: ['M', 'L', 'XL'],
     color: ['Black', 'Olive'],
   },
   {
     id: 3,
-    name: 'Varsity Utility Jacket',
+    name: 'Varsity Jacket',
     price: 389,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Outerwear',
     size: ['S', 'M', 'L'],
     color: ['Black', 'Navy'],
   },
   {
     id: 4,
-    name: 'Structural Footwear Set',
+    name: 'Low-Top Sneakers',
     price: 299,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Sneakers',
     size: ['8', '9', '10', '11'],
     color: ['Black', 'White'],
   },
   {
     id: 5,
-    name: 'Distressed Denim Essentials',
+    name: 'Distressed Jeans',
     price: 279,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Pants',
     size: ['S', 'M', 'L', 'XL'],
     color: ['Blue', 'Black'],
   },
   {
     id: 6,
-    name: 'Oversized Utility Layers',
+    name: 'Oversized T-Shirt',
     price: 449,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Tops',
     size: ['M', 'L', 'XL'],
     color: ['Black', 'Grey'],
   },
   {
     id: 7,
-    name: 'Technical Cargo Pants',
+    name: 'Cargo Pants',
     price: 199,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Pants',
     size: ['S', 'M', 'L'],
     color: ['Black', 'Olive'],
@@ -83,43 +83,43 @@ const allProducts: Product[] = [
     id: 8,
     name: 'Heavyweight Hoodie',
     price: 159,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Hoodies',
     size: ['S', 'M', 'L', 'XL'],
     color: ['Black', 'Grey'],
   },
   {
     id: 9,
-    name: 'Streetwear Sneakers',
+    name: 'Classic Sneakers',
     price: 249,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Sneakers',
     size: ['8', '9', '10', '11', '12'],
     color: ['Black', 'White'],
   },
   {
     id: 10,
-    name: 'Utility Sweatpants',
+    name: 'Classic Sweatpants',
     price: 129,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Sweatpants',
     size: ['S', 'M', 'L', 'XL'],
     color: ['Black', 'Grey'],
   },
   {
     id: 11,
-    name: 'Tactical Cap',
+    name: 'Baseball Cap',
     price: 49,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Headwear',
     size: ['One Size'],
     color: ['Black', 'Navy'],
   },
   {
     id: 12,
-    name: 'Graphic Tee',
+    name: 'Graphic T-Shirt',
     price: 79,
-    image: '/placeholder.png',
+    image: '/logo.jpg',
     category: 'Tops',
     size: ['S', 'M', 'L', 'XL'],
     color: ['Black', 'White'],
@@ -179,21 +179,17 @@ export default function CollectionsPage() {
                 <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
                   Categories
                 </h3>
-                <div className="space-y-2">
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="w-full px-3 py-2 bg-primary-black/50 border border-accent-white/10 rounded-lg text-accent-white focus:outline-none focus:border-accent-metallic-gray/50 font-body text-sm"
+                >
                   {categories.map(category => (
-                    <button
-                      key={category}
-                      onClick={() => setSelectedCategory(category)}
-                      className={`block w-full text-left px-3 py-2 rounded-lg transition-colors font-body text-sm ${
-                        selectedCategory === category
-                          ? 'bg-accent-white/10 text-accent-white border border-accent-white/20'
-                          : 'text-accent-white/60 hover:text-accent-white hover:bg-accent-white/5'
-                      }`}
-                    >
+                    <option key={category} value={category} className="bg-primary-black">
                       {category}
-                    </button>
+                    </option>
                   ))}
-                </div>
+                </select>
               </div>
 
               {/* Price Range */}
@@ -336,21 +332,17 @@ export default function CollectionsPage() {
                   <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">
                     Categories
                   </h3>
-                  <div className="space-y-2">
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="w-full px-3 py-2 bg-primary-black/50 border border-accent-white/10 rounded-lg text-accent-white focus:outline-none focus:border-accent-metallic-gray/50 font-body text-sm"
+                  >
                     {categories.map(category => (
-                      <button
-                        key={category}
-                        onClick={() => setSelectedCategory(category)}
-                        className={`block w-full text-left px-3 py-2 rounded-lg transition-colors font-body text-sm ${
-                          selectedCategory === category
-                            ? 'bg-accent-white/10 text-accent-white border border-accent-white/20'
-                            : 'text-accent-white/60 hover:text-accent-white hover:bg-accent-white/5'
-                        }`}
-                      >
+                      <option key={category} value={category} className="bg-primary-black">
                         {category}
-                      </button>
+                      </option>
                     ))}
-                  </div>
+                  </select>
                 </div>
                 <div>
                   <h3 className="text-accent-white font-body font-semibold uppercase tracking-wider text-sm mb-4">

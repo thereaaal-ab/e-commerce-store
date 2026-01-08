@@ -16,7 +16,7 @@ export default function Footer() {
       { name: 'Distressed Denim', href: '#utility' },
     ],
     brand: [
-      { name: 'Manifesto', href: '#manifesto' },
+      { name: 'About Us', href: '#about-us' },
       { name: 'Contact', href: '#' },
       { name: 'Shipping', href: '#' },
       { name: 'Returns', href: '#' },
@@ -41,7 +41,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-xl font-heading font-bold text-accent-white mb-4 uppercase tracking-wide">
-              NEXORA
+              SWAG
             </h3>
             <p className="text-accent-white/50 font-body text-sm leading-relaxed mb-6">
               Avant-Garde Urbanism. Utility-driven design for the modern explorer.
@@ -153,7 +153,7 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <p className="text-accent-white/30 font-body text-xs mb-4 md:mb-0">
-            © {currentYear} Nexora. All rights reserved.
+            © {currentYear} Swag. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link

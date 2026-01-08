@@ -8,8 +8,10 @@ import Link from 'next/link'
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
@@ -27,7 +29,7 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        mounted && isScrolled
           ? 'bg-primary-black/98 backdrop-blur-sm border-b border-accent-white/10'
           : 'bg-transparent'
       }`}
@@ -39,13 +41,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <motion.h1
-              className="text-xl sm:text-2xl font-heading font-bold text-accent-white tracking-wider uppercase"
+            <motion.span
+              className="text-xl sm:text-2xl font-heading font-bold text-accent-white tracking-wider uppercase block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-accent-white">NEXORA</span>
-            </motion.h1>
+              SWAG
+            </motion.span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -56,8 +58,10 @@ export default function Header() {
                 href={link.href}
                 className="text-accent-white/70 hover:text-accent-white transition-colors font-body text-xs font-medium uppercase tracking-[0.2em] relative group"
               >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-metallic-gray group-hover:w-full transition-all duration-300" />
+                <span className="relative">
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-metallic-gray group-hover:w-full transition-all duration-300" />
+                </span>
               </Link>
             ))}
           </div>

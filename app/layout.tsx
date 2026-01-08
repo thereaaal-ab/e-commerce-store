@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Nexora | Avant-Garde Urban Utility',
+  title: 'Swag | Avant-Garde Urban Utility',
   description: 'Urban Utility Redefined. Avant-garde streetwear with technical materials, oversized silhouettes, and purposeful design for the modern urban explorer.',
 }
 

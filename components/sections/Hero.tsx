@@ -3,24 +3,29 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
+import dynamic from 'next/dynamic'
+
+const Silk = dynamic(() => import('@/components/Silk'), {
+  ssr: false,
+  loading: () => null,
+})
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/banner.jpg"
-          alt="Nexora Hero"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
+      {/* Silk Background */}
+      <div className="absolute inset-0 z-0">
+        <Silk
+          speed={5}
+          scale={1}
+          color="#7B7481"
+          noiseIntensity={1.5}
+          rotation={0}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-black/90 via-primary-black/70 to-primary-black/95" />
-        <div className="absolute inset-0 brutalist-overlay" />
       </div>
+
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-primary-black/60 via-primary-black/40 to-primary-black/80" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
