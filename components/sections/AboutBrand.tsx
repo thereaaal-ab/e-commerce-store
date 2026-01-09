@@ -14,8 +14,8 @@ export default function AboutBrand() {
           className="text-center"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold mb-8 tracking-tight">
-            <span className="text-accent-white">AVANT-GARDE</span>{' '}
-            <span className="text-gradient">URBANISM</span>
+            <span className="text-accent-white">WELCOME TO</span>{' '}
+            <span className="text-gradient">SWAG</span>
           </h2>
           <div className="space-y-6 text-accent-white/70 font-body text-base lg:text-lg leading-relaxed text-left">
             <p className="uppercase tracking-[0.1em] text-accent-metallic-gray text-sm font-medium text-center">
