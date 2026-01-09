@@ -40,7 +40,7 @@ export default function TiltedCard({
   overlayContent = null,
   displayOverlayContent = false
 }: TiltedCardProps) {
-  const ref = useRef<HTMLFigureElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const rotateX = useSpring(useMotionValue(0), springConfig)
@@ -55,7 +55,7 @@ export default function TiltedCard({
 
   const [lastY, setLastY] = useState(0)
 
-  function handleMouse(e: React.MouseEvent<HTMLFigureElement>) {
+  function handleMouse(e: React.MouseEvent<HTMLElement>) {
     if (!ref.current) return
 
     const rect = ref.current.getBoundingClientRect()
